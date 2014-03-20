@@ -86,7 +86,6 @@ unittest.getUser = (email, password, done, force) ->
             user.set('permissions', [])
             user.save (err) ->
               wrapUpGetUser(email, user, done)
-            wrapUpGetUser(email, user, done)
         )
       )
       form = req.form()
