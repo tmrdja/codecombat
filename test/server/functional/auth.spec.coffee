@@ -55,7 +55,7 @@ describe '/auth/login', ->
   it 'rejects wrong passwords', (done) ->
     req = request.post(urlLogin, (error, response) ->
       expect(response.statusCode).toBe(401)
-      expect(response.body.indexOf("wrong, wrong")).toBeGreaterThan(-1)
+      expect(response.body.indexOf("wrong")).toBeGreaterThan(-1)
       done()
     )
     form = req.form()
