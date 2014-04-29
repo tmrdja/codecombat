@@ -32,6 +32,8 @@ module.exports = class SystemsTabView extends View
       @supermodel.loadModel(ls, 'system')
 
   afterRender: ->
+    if $(document).width() < 800
+      @$el.find('#systems-treema').addClass('collapse')
     @buildSystemsTreema()
     
   onLoaded: ->

@@ -16,6 +16,10 @@ module.exports = class ScriptsTabView extends View
     super options
     @world = options.world
     @files = options.files
+    
+  afterRender: ->
+    if $(document).width() < 800
+      @$el.find('#scripts-treema').addClass('collapse')
   
   onLoaded: ->
   onLevelLoaded: (e) ->

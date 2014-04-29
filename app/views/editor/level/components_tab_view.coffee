@@ -22,6 +22,10 @@ module.exports = class ComponentsTabView extends View
   events:
     'click #create-new-component-button': 'createNewLevelComponent'
     'click #create-new-component-button-no-select': 'createNewLevelComponent'
+      
+  afterRender: ->
+    if $(document).width() < 800
+      @$el.find('#components-treema').addClass('collapse')
 
   onLoaded: ->
   onLevelThangsChanged: (e) ->
